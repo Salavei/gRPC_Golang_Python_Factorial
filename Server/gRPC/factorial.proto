@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package utils;
+option go_package = "/utils";
+
+service Factorial {
+rpc CalculateFactorial (FactorialRequest) returns (FactorialResponse) {}
+}
+
+message FactorialRequest {
+int64 number = 1;
+}
+
+message FactorialResponse {
+string result = 1;
+}

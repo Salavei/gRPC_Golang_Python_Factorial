@@ -1,0 +1,2 @@
+protoc -I=./ --go-grpc_out=require_unimplemented_servers=false:.  --go_out=. factorial.proto
+python -m grpc_tools.protoc -I. --go-grpc_out=require_unimplemented_servers=false:.  --go_out=. factorial.proto
