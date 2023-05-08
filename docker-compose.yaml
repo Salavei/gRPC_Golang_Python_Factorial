@@ -1,13 +1,22 @@
 version: "3.8"
 services:
-  python_client:
-    build: ./Client
+  flask_client:
+    build: ./FlaskClient
     ports:
       - "8000:8000"
     environment:
       - PYTHONUNBUFFERED=1
       - GO_SERVER_HOST=go_server
       - GO_SERVER_PORT=3000
+  fastapi_client:
+    build: ./FastApi_Client
+    ports:
+      - "6000:6000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - GO_SERVER_HOST=go_server
+      - GO_SERVER_PORT=3000
+      - AUTH_TOKEN=abc123
   go_server:
     build: ./Server/gRPC
     ports:

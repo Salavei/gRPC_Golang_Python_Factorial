@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>gRPC_Golang_Python_Factorial</h1>
-  <img src="https://user-images.githubusercontent.com/46206522/117317920-51cfa980-ae8c-11eb-9a2f-35424f9fae85.png" alt="grpc_logo">
+  <h1>gRPC Golang/Python - Factorial</h1>
+  <img src="https://grpc.io/img/logos/grpc-icon-color.png" alt="grpc_logo" "width="400" height="300">
   <p>This is a simple gRPC project that showcases how to implement gRPC with Python and Golang, and how to utilize Redis as a caching layer.</p>
 </div>
 
@@ -13,6 +13,19 @@ The project consists of three components:
 - Golang gRPC server: serves as a gRPC server that calculates factorials and caches the results using Redis.
 - Redis: used as a caching layer to store previously calculated factorials.
 
+## Tests
+We have implemented unit tests for the Flask application and integration tests for the gRPC server written in Golang.
+
+To run the tests for the Flask application, navigate to the Client directory and run the following command:
+````
+python -m unittest discover -s tests/
+````
+To run the tests for the gRPC server, navigate to the Server/golang directory and run the following command:
+````
+go test
+````
+I have used the unittest framework for testing the Flask application, and the default testing framework for Golang.
+
 ## Requirements
 
 - Docker
@@ -23,9 +36,8 @@ The project consists of three components:
 To run the project, simply clone the repository and run:
 
 ````
+docker-compose build
 docker-compose up
-
-
 ````
 
 
@@ -36,7 +48,7 @@ The Flask server listens on port 8000 and serves a RESTful API endpoint that acc
 
 ## Usage
 
-To use the project, simply send a POST request to [http://localhost:8000/factorial](http://localhost:3000/factorial) with the following JSON payload:
+To use the project, simply send a POST request to [http://localhost:8000/factorial](http://localhost:8000/factorial) with the following JSON payload:
 
 ```markdown
 {
